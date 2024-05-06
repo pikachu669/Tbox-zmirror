@@ -418,6 +418,11 @@ def uploadee(url):
     else:
         raise DirectDownloadLinkException("ERROR: Direct Link not found")
 
+def replace_terabox_link(original_url):
+    # Replace the domain and path in the original URL
+    new_url = original_url.replace("https://d.1024tera.com/", "https://d3.teraboxapp.com/")
+    return new_url
+
 
 def terabox(url):
     if not path.isfile('terabox.txt'):
@@ -473,7 +478,7 @@ def terabox(url):
                         details['title'] = content['server_filename']
                     folderPath = details['title']
                 item = {
-                    'url': content['dlink'],
+                    'url': replace_terabox_link(content['dlink']), # Replace the dlink with modified URL
                     'filename': content['server_filename'],
                     'path' : path.join(folderPath),
                 }
