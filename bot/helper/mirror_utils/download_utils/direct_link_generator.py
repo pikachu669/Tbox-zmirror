@@ -420,7 +420,7 @@ def uploadee(url):
 
 def replace_terabox_link(original_url):
     # Replace the domain and path in the original URL
-    new_url = original_url.replace("https://d.1024tera.com/", "https://d3.teraboxapp.com/")
+    new_url = original_url.replace("https://d.1024tera.com/", "https://d8.freeterabox.com/")
     return new_url
 
 
